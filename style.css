@@ -1,0 +1,149 @@
+body {
+
+}
+
+.clear{
+	clear:both;
+}
+
+.d1{
+	display:none;
+}
+.d2{
+	display:block;
+}
+
+.add_new{
+	float: left;
+	width: 200px;		
+}
+.formaed {
+	max-width: 510px;
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 1px solid black;			
+}
+
+.formaed {
+	height: 200px;
+	display:none;
+}
+.formaed>div{
+	width: 500px;
+	float:left;
+	margin: 5px;
+}
+.formaed > div > div {
+	width: 250px;
+	float:left
+} 
+.formaed > div > div:nth-child(1) {
+	font-weight:bold;
+}		
+
+
+ul#list-data{
+
+}
+
+ul#list-data > li {
+    border-top: 1px solid red;
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+    height: 25px;
+}
+ul#list-data>li:last-child {
+	border-bottom: 1px solid red;
+}
+ul#list-data>li>div>div{	
+	float:left;
+}
+
+ul#list-data>li>div>div:nth-child(1){
+	width: 20px;	
+}		
+ul#list-data>li>div>div:nth-child(2){
+	width: 125px;		
+}	
+ul#list-data>li>div>div:nth-child(3){
+	width: 125px;		
+}	
+ul#list-data>li>div>div:nth-child(4){
+	width: 125px;		
+}	
+ul#list-data>li>div>div:nth-child(5){
+	width: 180px;	
+}
+
+ul#list-data>li:nth-child(1) {
+	font-weight:bold;
+}
+
+.detail {
+	max-width: 510px;
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 1px solid black;			
+}		
+
+.detail {
+	height: 200px;
+	display:none;
+}
+.detail>div{
+	width: 500px;
+	float:left;
+	margin: 5px;
+}
+.detail > div > div {
+	width: 250px;
+	float:left
+}
+
+.detail > div > div:nth-child(1) {
+	font-weight:bold;
+}		
+
+
+
+/******************* error message css *********************************************/
+
+.info, .success, .warning, .error, .validation {
+	border: 1px solid;
+	margin: 10px 0px;
+	padding:15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+.info {
+	color: #00529B;
+	background-color: #BDE5F8;
+	background-image: url('./PNG/Knob Info.png');
+}
+.success {
+	color: #4F8A10;
+	background-color: #DFF2BF;
+	background-image:url('./PNG/Knob Valid Green.png');
+}
+.warning {
+	color: #9F6000;
+	background-color: #FEEFB3;
+	background-image: url('./PNG/Knob Attention.png');
+}
+.error {
+	color: #D8000C;
+	background-color: #FFBABA;
+	background-image: url('./PNG/Knob Cancel.png');
+}
+
+.validation {
+	color: #D63301;
+	background-color: #FFCCBA;
+	background-image: url('./PNG/Knob Cancel.png');
+}	
+.validation ul{
+	margin: 0;
+	padding: 0 0 0 10px;
+}	
+
+/******************* error message css *********************************************/

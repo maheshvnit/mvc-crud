@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <title>MVC-CRUD Application</title>
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<script type="text/javascript" language="javascript" src="logging.js"></script>
+	<script type="text/javascript" language="javascript" src="util.js"></script>	
+	<script type="text/javascript" language="javascript" src="model.js"></script>
+	<script type="text/javascript" language="javascript" src="view.js"></script>
+	<script type="text/javascript" language="javascript" src="controller.js"></script>
+</head>
+<body>    
+    <h1>MVC-CRUD Application</h1>
+	<div class="add_new d2" id="add_new">
+		<input value="Add New" type="button" id="Add-New" style="margin-left: 187px;">
+	</div>
+    <form action="" id="aeform" style="float: left;">
+		<div class="formaed d1" id="add_new_form_box">	
+			<input type="hidden" name="uid" id="uid" value="" />
+			<input type="hidden" name="action" id="action" value="add"  />
+			<input type="hidden" name="action-from" id="action-from" value=""  />
+			<div>
+				<div>First name:</div>
+				<div><input type="text" name="firstname" id="firstname" /></div>			
+			</div>
+			<div>
+				<div>Last name: </div>
+				<div><input type="text" name="lastname" id="lastname" /></div>			
+			</div>			
+			<div>
+				<div>Email:</div>
+				<div><input type="text" name="email" id="email" /></div>			
+			</div>
+			<div>
+				<div style="text-align: right;"><input type="checkbox" name="other" id="other" style="float: right; text-align: right;"> Other :</div>
+				<div><textarea name="other-txt" id="other-txt"></textarea></div>	
+			</div>			
+			<div>					
+				<input value="Submit"  id="Add-New-Submit" type="button" style="margin-left: 187px;">
+				<input value="Cancel"  id="Add-New-Cancel" type="button" style="margin-left: 114px;">								
+			</div>			
+		</div>
+	</form>	
+	<div style="float: right;" >
+		<div style="width: 580px;" id="list_data_div" class="d1">
+			<ul id="list-data" style="list-style: none outside none; margin: 0px; padding: 0px;">
+				<li>
+					<div>
+						<div>Sr.</div>
+						<div>First name</div>
+						<div>Last name</div>
+						<div>Email</div>
+						<div>Actions</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>    
+	<div class="detail d1" id="details">			
+		<div>
+			<div>First name: </div>
+			<div id="detail-firstname">Mahesh</div>			
+		</div>
+		<div>
+			<div>Last name:</div>
+			<div id="detail-lastname">Prasad</div>			
+		</div>			
+		<div>
+			<div>Email:</div>
+			<div id="detail-email">mpd@gmail.com</div>			
+		</div>
+		<div>
+			<div style="text-align: right;">Other :</div>
+			<div id="detail-other-txt">fsdfsa fsa rdasdas dsa dsad sdaf  adsa dwas dsadsa dsfa dasda</div>								
+		</div>			
+		<div>					
+			<input value="Back" type="button" style="margin-left: 250px;" id="hide-detail">								
+		</div>					
+	</div>	
+	<div class="clear" ></div>
+	<div id="message" class="d1" ></div>	
+	<div >
+		<div class="info d1" id="info">Info message</div>
+		<div class="success d1" id="success">Successful operation message</div>
+		<div class="warning d1" id="warning">Warning message</div>
+		<div class="error d1" id="error">Error message</div>
+		<div class="validation d1" id="validation">
+			<ul id="validation-list">
+				<li>Validation message</li>
+				<li>Validation message</li>
+				<li>Validation message</li>
+				<li>Validation message</li>
+			</ul>		
+		</div>
+	</div>
+    <script type="text/javascript">
+		
+        // on load
+        window.onload = function() {          
+			// on submit add event listener to form
+			//addEvent(document.getElementById('aeform'), 'submit', MyController.validateForm);
+			
+			// add new button event handler
+			addEvent(document.getElementById('Add-New'), 'click', MyController.addNewButton);
+			
+			// add new Submit event handler
+			addEvent(document.getElementById('Add-New-Submit'), 'click', MyController.addNewSubmitButton);
+			
+			// add new Cancel event handler
+			addEvent(document.getElementById('Add-New-Cancel'), 'click', MyController.addNewCancelButton);	
+
+			// detail, edit and delete event handler
+			addEvent(document.getElementById('list-data'), 'click', MyController.detailEditDeleteButtons);
+			
+			// hide detail event handler
+			addEvent(document.getElementById('hide-detail'), 'click', MyController.backDetailButton);
+			
+        }; 
+		
+    </script>
+</body>
+</html>
