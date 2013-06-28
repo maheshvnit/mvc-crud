@@ -2,7 +2,7 @@
 
 //set debug = false to disable alert
 var debug = true; // true / false		
-
+var loggerShow = false; // true / false this for IE
 /*****************************************************************************
 *
 *	Function Name	:	trace	
@@ -14,7 +14,7 @@ var debug = true; // true / false
 function trace(msg) 
 {	
 	if(debug) 
-	{
+	{		
 		if (typeof console == 'undefined') 
 		{	
 			alert(msg);
@@ -22,7 +22,28 @@ function trace(msg)
 		else
 		{
 			console.log(msg);
-		}
+		}		
+	}
+}
+
+function _loggerF(msg) 
+{ 	
+	var _logger = document.getElementById('_logger');
+	var _div = document.createElement('div');
+	var _text = document.createTextNode(msg)
+	_div.appendChild(_text);
+	_logger.appendChild(_div);
+	if(loggerShow)
+	{
+		_logger.style.display = 'block';
+	}
+}
+
+function trace2(msg) 
+{	
+	if(debug) 
+	{
+		_loggerF(msg);		
 	}
 }
 
@@ -54,19 +75,19 @@ if (typeof console == 'undefined')
 {
 	var console = {};
 	console.log = function(msg) {
-		trace(msg);				
+		trace2(msg);				
 	};
 	console.debug = function(msg) {
-		trace(msg);				
+		trace2(msg);				
 	};
 	console.error = function(msg) {
-		trace(msg);				
+		trace2(msg);				
 	};
 	console.info = function(msg) {
-		trace(msg);				
+		trace2(msg);				
 	};
 	console.warn = function(msg) {
-		trace(msg);				
+		trace2(msg);				
 	};
 }	
 

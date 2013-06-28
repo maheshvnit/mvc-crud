@@ -146,4 +146,14 @@ ul#list-data>li:nth-child(1) {
 	padding: 0 0 0 10px;
 }	
 
+.logger {
+    height: 200px;
+    overflow: auto;
+	padding:20px;
+	display:none;
+}
+.logger2{
+	font-weight:bold;
+}
+
 /******************* error message css *********************************************/

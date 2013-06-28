@@ -1,11 +1,15 @@
 // attach event 
 function addEvent(obj,ent,callb)
 {
-	if (obj.addEventListener) {  
+	MyLogger.log('util-addEvent - start');
+	if (obj.addEventListener) { 		
+		MyLogger.log('util-addEvent - addEventListener');
 		obj.addEventListener(ent, callb, false);   
-	} else if (obj.attachEvent)  {  
-		obj.attachEvent('on'+ent, callb);  
-	}  
+	} else if (obj.attachEvent)  { 
+		MyLogger.log('util-addEvent - attachEvent');
+		obj.attachEvent('on'+ent.toString(), callb);  
+	} 
+	MyLogger.log('util-addEvent - end');	
 }
 
 // prevent event
