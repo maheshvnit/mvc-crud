@@ -2,7 +2,7 @@
 
 //set debug = false to disable alert
 var debug = true; // true / false		
-var loggerShow = false; // true / false this for IE
+var loggerShow = true; // true / false this for IE
 /*****************************************************************************
 *
 *	Function Name	:	trace	
@@ -17,7 +17,7 @@ function trace(msg)
 	{		
 		if (typeof console == 'undefined') 
 		{	
-			alert(msg);
+			_loggerF(msg);
 		}
 		else
 		{
